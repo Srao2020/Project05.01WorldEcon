@@ -33,7 +33,7 @@ public class CountryComparator {
             Double d2 = two.getIndexValue(secondarySort);
             diff = d1.compareTo(d2);
         }
-        return (asc) ? diff : -diff;
+        return (asc) ? -diff : diff;
     }
 
 }
