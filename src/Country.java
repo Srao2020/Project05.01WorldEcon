@@ -2,7 +2,10 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 
 /**
- * @TODO complete this header comment
+ * This class represents a Country object which contains information about a country's name, region, and economic freedom index.
+ * It also contains a hash map of the country's category indices and a secondary category for display.
+ * @author Srao2020
+ * @version 05/04/2023
  */
 public class Country implements Comparable<Country> {
     private int ID;
@@ -13,7 +16,8 @@ public class Country implements Comparable<Country> {
     private String secondaryCategory;
 
     /**
-     * TODO complete this constructor comment
+     * Constructs a Country object with the specified id, name, web name, and region.
+     * Initializes the category indices hash map and sets the default values to 0.0.
      * @param id
      * @param name
      * @param wName
@@ -41,7 +45,7 @@ public class Country implements Comparable<Country> {
     }
 
     /**
-     * TODO: method comment
+     * Populates the country's category indices with the specified values array and calculates the economic freedom index.
      * @param values
      */
     public void populateIndices(double[] values)    {
@@ -57,7 +61,7 @@ public class Country implements Comparable<Country> {
     }
 
     /**
-     * TODO: method comment
+     * Sets the secondary category for display to the specified term.
      * @param sTerm
      */
     public void setSecondaryCategory(String sTerm)  {
@@ -65,7 +69,7 @@ public class Country implements Comparable<Country> {
     }
 
     /**
-     * TODO: method comment
+     * Returns a string representation of the Country object.
      * @return
      */
     public String toString()    {
@@ -78,7 +82,7 @@ public class Country implements Comparable<Country> {
     }
 
     /**
-     * TODO: method comment
+     * Compares this Country object to another Country object based on their economic freedom indices.
      * @param other the object to be compared.
      * @return
      */
@@ -89,41 +93,41 @@ public class Country implements Comparable<Country> {
     }
 
     /**
-     * TODO: method comment
-     * @return
+     * This method returns the economic freedom index of a country.
+     * @return the economic freedom index of the country
      */
     public double getEconomicFreedomIndex() {
         return economicFreedomIndex;
     }
 
     /**
-     * TODO: method comment
+     * This method returns the index value of a specific category for a country.
      * @param indexName
-     * @return
+     * @return the index value of the specified category for the country
      */
     public double getIndexValue(String indexName)   {
         return categoryIndices.get(indexName);
     }
 
     /**
-     * TODO: method comment
-     * @return
+     * This method returns the ID of the country.
+     * @return the ID of the country
      */
     public int getID() {
         return ID;
     }
 
     /**
-     * TODO: method comment
-     * @return
+     * This method returns the name of the country.
+     * @return the name of the country
      */
     public String getCountryName() {
         return countryName;
     }
 
     /**
-     * TODO: method comment
-     * @return
+     * This method returns the region of the country.
+     * @return the region of the country
      */
     public String getRegion() {
         return region;
