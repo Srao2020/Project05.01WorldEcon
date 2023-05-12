@@ -19,7 +19,7 @@ public class EconomicDatabase {
             "FH: Fiscal Health", "BF: Business Freedom", "LF: Labor Freedom", "MF: Monetary Freedom", "TF: Trade Freedom", "IF: Investment Freedom", "FF: Financial Freedom"};
 
     /**
-     * TODO: Constructor comment
+     * Constructs a new EconomicDatabase object
      */
     public EconomicDatabase() {
         database = new ArrayList<>();
@@ -30,7 +30,7 @@ public class EconomicDatabase {
     }
 
     /**
-     * TODO: Method comment
+     * Populates the database list with Country objects
      */
     public void populateDatabase() {
         String filename = "IEF_2023_data.txt";
@@ -67,9 +67,8 @@ public class EconomicDatabase {
     }
 
     /**
-     * TODO: Method comment
-     *
-     * @return
+     * Prompts the user for search criteria and sorts the database based on the chosen criteria.
+     * @return true if the user enters valid search terms, false if the user enters "Q" to quit
      */
     public boolean getSearchCriteria() {
         String userIn;
@@ -123,13 +122,23 @@ public class EconomicDatabase {
     }
 
     /**
-     * TODO: Overwrite this call to Collections.sort with a user-defined sort
+     * This method sorts the economic database stored in an ArrayList<Country>
+     * based on the specified sorting criteria (asc, primarySort, and secondarySort).
+     * It calls the merge() method to merge the sorted arrays.
      */
     public void sortDB() {
         CountryComparator comp = new CountryComparator(asc, primarySort, secondarySort);
         s(database, 0, database.size() - 1, comp);
     }
 
+    /**
+     * This method merges two sorted subarrays of an ArrayList<Country> into a single sorted subarray.
+     * @param arr The ArrayList<Country> to be sorted
+     * @param left The starting index of the left subarray
+     * @param middle The ending index of the left subarray and the starting index of the right subarray
+     * @param right The ending index of the right subarray
+     * @param comp The CountryComparator object used to compare two Country objects for sorting
+     */
     public static void merge(ArrayList<Country> arr, int left, int middle, int right, CountryComparator comp) {
         int half1 = middle - left + 1;
         int half2 = right - middle;
@@ -171,6 +180,14 @@ public class EconomicDatabase {
         }
     }
 
+    /**
+     * This method sorts an ArrayList<Country> using the merge sort algorithm recursively.
+     * It divides the input array into two subarrays, sorts the subarrays, and merges them using the merge() method.
+     * @param arr The ArrayList<Country> to be sorted
+     * @param left The starting index of the left subarray
+     * @param right The ending index of the right subarray
+     * @param comp The CountryComparator object used to compare two Country objects for sorting
+     */
     public void s(ArrayList<Country> arr, int left, int right, CountryComparator comp)    {
         if (left < right) {
             int middle = left + (right - left) / 2;
@@ -186,7 +203,8 @@ public class EconomicDatabase {
 
 
     /**
-     * TODO: Method comment
+     * This method prints the economic database stored in an ArrayList<Country>
+     * with the secondary category set to the specified sorting criteria (secondarySort).
      */
     public void printDatabase() {
         for(int i = 0; i < database.size(); i++) {
@@ -196,8 +214,8 @@ public class EconomicDatabase {
     }
 
     /**
-     * TODO: Method comment
-     * @param args
+     * Main Method for this class
+     * @param args Command line arguments, if needed
      */
     public static void main(String[] args) {
         EconomicDatabase database = new EconomicDatabase();

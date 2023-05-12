@@ -46,7 +46,7 @@ public class Country implements Comparable<Country> {
 
     /**
      * Populates the country's category indices with the specified values array and calculates the economic freedom index.
-     * @param values
+     * @param values the specified values
      */
     public void populateIndices(double[] values)    {
         int i = 0;
@@ -62,7 +62,7 @@ public class Country implements Comparable<Country> {
 
     /**
      * Sets the secondary category for display to the specified term.
-     * @param sTerm
+     * @param sTerm the specified term
      */
     public void setSecondaryCategory(String sTerm)  {
         secondaryCategory = sTerm;
@@ -70,7 +70,7 @@ public class Country implements Comparable<Country> {
 
     /**
      * Returns a string representation of the Country object.
-     * @return
+     * @return a string representation of the Country object in the specified format
      */
     public String toString()    {
         DecimalFormat df = new DecimalFormat("0.00");
@@ -84,7 +84,7 @@ public class Country implements Comparable<Country> {
     /**
      * Compares this Country object to another Country object based on their economic freedom indices.
      * @param other the object to be compared.
-     * @return
+     * @return an integer value indicating the result of the comparison
      */
     public int compareTo(Country other) {
         Double myEFI = economicFreedomIndex;

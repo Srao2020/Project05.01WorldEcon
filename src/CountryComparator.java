@@ -21,8 +21,8 @@ public class CountryComparator {
 
     /**
      * Compares two Country objects based on the specified sorting criteria.
-     * @param one
-     * @param two
+     * @param one Country one
+     * @param two Country two
      * @return A negative integer, zero, or a positive integer as the first argument is less than, equal to, or greater than the second argument.
      */
     public int compare (Country one, Country two) {
