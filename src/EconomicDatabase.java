@@ -3,7 +3,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * TODO: Class header comment
+ * Represents a database of economic information for various countries.
+ * @author Srao2020
+ * @version 05/04/2023
  */
 public class EconomicDatabase {
     private static ArrayList<Country> database;
@@ -122,7 +124,6 @@ public class EconomicDatabase {
 
     /**
      * TODO: Overwrite this call to Collections.sort with a user-defined sort
-     * TODO: Selection, Insertion, or Mergesort
      */
     public void sortDB() {
         CountryComparator comp = new CountryComparator(asc, primarySort, secondarySort);
